@@ -41,7 +41,7 @@ const NewIssuePage = () => {
           <Callout.Text>{error}</Callout.Text>
         </Callout.Root>
       )}
-      <form className='space-y-3' onSubmit={onSubmit}>
+      <form className='flex flex-col gap-3' onSubmit={onSubmit}>
           <TextField.Root placeholder='Title' {...register('title')}></TextField.Root>
           <ErrorMessage>{errors.title?.message}</ErrorMessage>
           <Controller 
@@ -50,7 +50,7 @@ const NewIssuePage = () => {
             render={({ field }) => <SimpleMDE placeholder='Description' {...field} ></SimpleMDE>}
           />
           <ErrorMessage>{errors.description?.message}</ErrorMessage>
-          <Button disabled={isSubmitting}>Submit New Issue {isSubmitting && <Spinner />}</Button>
+          <Button style={{ width: "fit-content" }} disabled={isSubmitting}>Submit New Issue {isSubmitting && <Spinner />}</Button>
       </form>
     </div>
   )
