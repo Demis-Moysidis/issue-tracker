@@ -1,6 +1,8 @@
+
+
 import { prisma } from '@/prisma/client';
-import IssueForm from '../../_components/IssueForm';
 import { notFound } from 'next/navigation';
+import IssueFormClient from './IssueFormClient';
 
 interface Props {
   params: Promise<{ id: string }>
@@ -16,7 +18,7 @@ const EditIssuePage = async ({ params }: Props) => {
   if (!issue) notFound();
 
   return (
-    <IssueForm issue={issue} />
+    <IssueFormClient issue={issue} />
   )
 }
 
