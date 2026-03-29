@@ -17,8 +17,6 @@ export default async function Home() {
     where: { status: 'CLOSED'}
   })
 
-  console.log('Status für Page', open, inProgress, closed)
-
   return (
     <Grid columns={{ initial: "1", md: "2"}} gap="5">
       <Flex direction="column" gap="5">
